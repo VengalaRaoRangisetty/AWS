@@ -114,6 +114,4 @@ IAM user (Billing user) ==>
    - Switch to MFA-task user, Verify if the MFA-Task user can enable/disable/sync MFA after the policy is attached.
 ---
 
-lab : 11 AM IST - 12 PM IST
-Lab 2 : 4 PM IST - 5 PM IST
 
