@@ -1,0 +1,144 @@
+34 launched Regions : 
+
+Region : A Physical / geographical locaiton. No bounaries/borders defined. We are allowed to use any region we have in AWS accounts.
+
+AZ / Availability Zone : a Data Center or combination of multiple DCs.. Every AZ connects with another AZ of that region with Multiple connecities, for High Availbility and FT. 
+
+PoP Location (point of Presence) : CDN (Content Delivery NEtwork) : Data stores near to end customer geographica;l location. When any request comes, near by location provides the response.
+
+==================================
+
+Case/Ticket/Incident: 
+
+Account & Billing related issues/Queries : Assistance for your account, such as billing, pricing, and reserved instances.
+Technical Assistance : Support for service-related technical issues, such as Amazon EC2, Amazon S3 and more.
+
+
+Basic SP : Cost : Free
+You will get only "Account & Billing related" assistance. You wont get any "technical assistance" from AWS.
+We can get 24x7 Account and billing assistance from AWS.
+==> Trusted Advisor : Only some suggestions we will get.
+
+--------
+
+Developer SP : Cost : Starts from 29$/Month.. 
+Account & Billing : 24x7, chat, email and phone support
+Technical Assistance : Only Email Support.. 12 Business Hours.. (8AM - 8 PM)
+==> 1 User (root) can create unlimited support cases
+==> Trusted Advisor : Only some suggestions we will get.
+
+
+General guidance : 24 hours
+System Impaired : 12 hours
+
+----------
+
+Business SP : Cost : Starts from 100$/Month..
+Account & Billing : 24x7, chat, email and phone support
+Technical Assistance : Phone, Chat and Email Support.. 1 hr response time.. 
+==> Any user (root/iam) can create unlimited support cases
+==>Full Set of Trusted Advisor advises.,
+
+
+General guidance : 24 hours
+System Impaired : 12 hours
+Production System Impaired : 4 Hours
+Production System Down : 1 Hour
+
+---------
+
+Enterprise SP : Cost : Starts from 15,000$/Month..
+Account & Billing : 24x7, chat, email and phone support
+Technical Assistance : Phone, Chat and Email Support.. 15 Min response time.. 
+==> Full Set of Trusted Advisor advises.
+==> Any user (root/iam) can create unlimited support cases
+==> Dedicated TAM (Technical Account manager)
+==> AWS conduct Trainings also
+==> Annual Operational & Architectural review with AWS team
+==> It supports Multiple AWS accounts (100 accounts can be combined with one support plan)
+
+General guidance : 24 hours
+System Impaired : 12 hours
+Production System Impaired : 4 Hours
+Production System Down : 1 Hour
+
+
+------
+
+Google Authenticator / Microsoft Authenticator / Authy 2-factor auth.. 
+
+Least Privilages Mechanism : Provide permissions to perform his daily jobs. No additional permissions than required.
+
+
+
+==================
+
+Action 1 : 
+
+"Preferences and Settings" --> "Billing Preferences" --> "Alert preferences " ==> Enable "Receive AWS Free Tier alerts"
+
+
+Action 2: Enbale Zero Spend Budgets.
+
+Under ""Billing and Cost Management"" ==> Budgets ==> "Zero spend budget" ==> Enter your email and save.
+
+=================
+
+Policy : A Document writtens in JSON format, That contains set of permisisons on our AWS account.
+
+AdministratorAccess : POrovide full access
+S3Full Access : Gives s3 service full access
+IAM Full Access : Provides IAM servcie full access
+ReadONly Access : provides read operations access.
+
+
+Authentication : Provide username & password, if its valid allowed you to login.
+Authorization : Based on the policy we attach to the user. 
+	- S3FullAccess : This user is authorised to perform all actions on s3 service.
+
+
+Implicit Allow : We can access the resources based on the provided policy. (All other services will be denied).
+
+Explicit Deny : if we setup deny on any service, at any condition, it will be denied. 
+
+=====
+
+An IAM user with "AdministratorAccess" policy is almost same as "root user". (Except Account management).
+
+=====
+
+
+IAM user with Admin Access : I dont want allow this user to work on S3 Service. 
+
+
+Create a policy to Deny everything on S3 and attach it to the user.
+
+==> You allow 100 times, but Deny 1 time (at any level) = Deny will take effect.
+
+
+=========
+
+AWS managed - job function : Based on stabndard jobs in market, aws prepared these (combination of multiple services)
+
+AWS managed : Based on aws services, aws preapred these policies. (s3 : s3fullaccess / s3readonly..)
+
+Customer Managed policy : based on customer's requirements, customer can create a policy and use with resources i.e; user/group/role.
+
+
+Need an IAM user, Who has "Administrator Acess", but no permissions on "S3 Service".?
+
+Option 1 : create an IAM user, add all the service polocies except S3.   Possible.? No
+Option 2 : Create an IAM user, Add "admin access", Deny S3 service access.	Possible.? yes
+
+
+
+Requirement : I need an IAM user, He need full access on s3 service, but this should work only from our corporate/office network. 
+When this guy is not in office/corp network, it should not allow any operation.
+
+
+
+
+
+
+
+
